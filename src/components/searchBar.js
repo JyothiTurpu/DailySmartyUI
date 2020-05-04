@@ -8,8 +8,7 @@ class SearchBar extends Component {
   }
 
   handleFormSubmit = function({query}) {
-    console.log('Handle Submit Form', query);
-    this.props.history.push('/results');
+    this.props.onSubmit(query);
   }
 
 
