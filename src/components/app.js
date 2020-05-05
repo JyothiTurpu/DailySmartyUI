@@ -9,8 +9,8 @@ class App extends Component {
 
   handleSearchBarSubmit = function(query) {
     console.log('Handle Submit Form', query);
-    this.props.fetchPostsWithQuery(query);
-    this.props.history.push('/results');
+    this.props.fetchPostsWithQuery(query, () => {this.props.history.push('/results')});
+    
   }
 
 
