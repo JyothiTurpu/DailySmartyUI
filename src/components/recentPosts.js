@@ -36,7 +36,7 @@ class RecentPosts extends Component {
                       Recent Posts
                 </div>
 
-                <ul className='recent_posts__posts'>
+                <ul className='recent-posts__posts'>
                     {/* <li>Recent Post 0</li>
                     <li>Recent Post 1</li>
                     <li>Recent Post 2</li> */}

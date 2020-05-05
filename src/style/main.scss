@@ -1,5 +1,6 @@
 html {
     font-size: 62.5%; // 1rem is 10px
+    font-family: 'Lato', sans-serif;
 }
 
 *,
@@ -11,6 +12,7 @@ html {
     font-family: 'montserrat';
 }
 
+
 body {
     overflow-x: hidden;
     font-weight: normal;
@@ -19,10 +21,27 @@ body {
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
     -webkit-tap-highlight-color: transparent;
+
+    font-family: 'Lato', sans-serif;
 }
 
+
+.app-wrapper {
+    display: grid;
+    justify-content: center;
+}
+
+
 .app {
+    height: 100vh;
+    width: 66vw;
     margin-top: 2rem;
+    display: grid;
+    // justify-items: stretch;
+    align-content: space-around;
+}
+
+.logo-main, .recent-posts {
     display: grid;
     justify-items: center;
 }
@@ -31,3 +50,19 @@ body {
 .post-topic {
     margin: 0 4px;
 }
+
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+
+
+$color-gray-one: #666666;
+$color-gray-two: #b3b3b3;
+$color-blue-one: #0079ff;
+
+@import './search-bar.scss';
+@import './recent-posts.scss';
