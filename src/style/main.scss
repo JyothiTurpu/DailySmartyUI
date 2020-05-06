@@ -32,14 +32,7 @@ body {
 }
 
 
-.app {
-    height: 100vh;
-    width: 66vw;
-    margin-top: 2rem;
-    display: grid;
-    // justify-items: stretch;
-    align-content: space-around;
-}
+
 
 .logo-main, .recent-posts {
     display: grid;
@@ -59,11 +52,14 @@ ul {
 }
 
 
-
 $color-gray-one: #666666;
 $color-gray-two: #b3b3b3;
+$color-gray-three: #d8d8d8;
 $color-blue-one: #0079ff;
 
+
+@import './mixins.scss';
+@import './app.scss';
 @import './search-bar.scss';
 @import './recent-posts.scss';
 @import './post.scss';
