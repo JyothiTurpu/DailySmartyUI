@@ -23,6 +23,28 @@ class Post extends Component {
   }
 
 
+  getNameForPostLink(str) {
+      // return (link.substring(link.lastIndexOf('/') + 1, link.length));
+      var n = str.lastIndexOf('/');
+      var link = str.substring(n + 1, str.length);
+
+        if((n+1) == str.length) {
+            link = str.slice(0, n);
+            n = link.lastIndexOf('/');
+            link = str.substring(n + 1, str.length - 1);
+        }    
+
+        if(link.includes('.html')) {
+            link = link.substring(0, link.length - 5);
+        }
+        if(link.includes('.htm')) {
+            link = link.substring(0, link.length - 4);
+        }
+
+        return link;
+  }
+
+
 
   renderLinks() {
     let links = this.props.post_links.map((post_link, index) => {
@@ -32,11 +54,15 @@ class Post extends Component {
 
               </div>
               <div className='post-link__link'>
-                  <a href={post_link.link_url}>Useful Link #{index + 1}</a>
+                   <a href={post_link.link_url}>{this.getNameForPostLink(post_link.link_url)}</a>
               </div>
           </div>
       );
     });
+
+    if(links == 0) {
+      return <div className='no-content'>No Post Links</div>
+    }
 
     return links;
   }
